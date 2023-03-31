@@ -1,0 +1,28 @@
+#include <stdio.h>
+int max(int a, int b)
+{
+    return (a > b) ? a : b ;
+}
+int min(int a, int b)
+{
+    return (a < b) ? a : b;
+}
+int main()
+{
+    int n, i, num, maximum, minimum;
+    printf("Enter the number of inputs: ");
+    scanf("%d", &n);
+    printf("Enter the numbers: ");
+    scanf("%d", &num);
+    maximum = num;
+    minimum = num;
+    for(i=1; i<n; i++)
+    {
+        scanf("%d", &num);
+        maximum = max(maximum, num);
+        minimum = min(minimum, num);
+    }
+    printf("Maximum = %d\n", maximum);
+    printf("Minimum = %d\n", minimum);
+    return 0;
+}
