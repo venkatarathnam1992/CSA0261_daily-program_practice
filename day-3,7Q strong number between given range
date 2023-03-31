@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n == 0) {
+        return 1;
+    } else {
+        return n * factorial(n-1);
+    }
+}
+
+int isStrong(int num) {
+    int originalNum = num;
+    int sum = 0;
+    while (num > 0) {
+        int digit = num % 10;
+        sum += factorial(digit);
+        num /= 10;
+    }
+    return (sum == originalNum);
+}
+
+void printStrongNumbers(int start, int end) {
+    printf("Strong numbers between %d and %d are: ", start, end);
+    for (int i = start; i <= end; i++) {
+        if (isStrong(i)) {
+            printf("%d ", i);
+        }
+    }
+}
+
+int main() {
+    int start, end;
+    printf("Enter the start and end of the interval: ");
+    scanf("%d %d", &start, &end);
+    printStrongNumbers(start, end);
+    return 0;
+}
