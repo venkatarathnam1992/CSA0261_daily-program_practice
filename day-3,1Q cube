@@ -1,1 +1,16 @@
-
+#include <stdio.h>
+int cubeNum(int);
+int main()
+{
+    int num;
+    int cube;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    cube = cubeNum(num);
+    printf("Cube of %d is: %d", num, cube);
+    return 0;
+}
+int cubeNum(int n)
+{
+    return (n * n * n);
+}
